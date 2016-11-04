@@ -16,14 +16,16 @@ class MainController: UIViewController {
     @IBOutlet var rightUp: UIButton!
     @IBOutlet var rightDown: UIButton!
     
-    @IBOutlet var speak: UIButton!
+    @IBAction func speekButtonTouchDown(_ sender: UIButton) {
+        startRecordingTask()
+    }
     
-    @IBAction func speaking(_ sender: AnyObject) {
-        speakButtonPressed()
+    @IBAction func speekButtonTouchUp(_ sender: UIButton) {
+        stopRecordingTask()
     }
     
     @IBAction func stopCar(_ sender: UIButton) {
-        service.stop()
+        carService.stop()
     }
     
     @IBAction func settings(_ sender: Any) {
@@ -33,17 +35,11 @@ class MainController: UIViewController {
         present(controller!, animated: true, completion: nil)
     }
     
-    
     // network service
-    let service = GoPiGoService()
-    let speech = SpeechService()
-    
-    // gravity
-    let motionManager = CMMotionManager()    
-    // Buttons pressed
-    @IBAction func controlButtonChanged(_ sender: UIButton) {
-        // buttonPressed()
-    }
+    let carService = GoPiGoService()
+    let speechService = SpeechService()
+    // to detect gravity
+    let motionManager = CMMotionManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()

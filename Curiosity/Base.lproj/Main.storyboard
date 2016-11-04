@@ -117,8 +117,9 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="Microphone Filled-100"/>
                                 <connections>
-                                    <action selector="controlButtonChanged:" destination="BYZ-38-t0r" eventType="touchDown" id="aFD-x7-148"/>
-                                    <action selector="speaking:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZaU-Pg-FuJ"/>
+                                    <action selector="speekButtonTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="sVf-Wv-AGl"/>
+                                    <action selector="speekButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MeQ-dM-TG3"/>
+                                    <action selector="speekButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="j0Y-dh-fBz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -147,7 +148,6 @@
                         <outlet property="leftUp" destination="ClI-VO-KMa" id="GaY-OJ-smZ"/>
                         <outlet property="rightDown" destination="h7N-Jv-EEm" id="I2e-2a-umv"/>
                         <outlet property="rightUp" destination="KR6-KM-Cm2" id="5fv-dW-day"/>
-                        <outlet property="speak" destination="2lV-IO-EBq" id="8io-Ha-IHx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
