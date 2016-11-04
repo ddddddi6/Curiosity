@@ -56,4 +56,17 @@ extension MainController {
         let count = result.replacingOccurrences(of: after + " ", with: "").replacingOccurrences(of: " " + before, with: "")
         return Int(count)
     }
+    
+    func parseNumberInString(text: String) -> Int? {
+        let strArr = split(text) { $0 == " " }
+        for item in strArr {
+            let components = item.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+            let part = "".join(components)
+            
+            if let intVal = part.toInt() {
+                return intVal
+            }
+        }
+        return nil
+    }
 }

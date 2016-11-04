@@ -46,5 +46,4 @@ class MainController: UIViewController {
         monitorControlButtons()
         motionManager.startDeviceMotionUpdates()
     }
-    
 }
