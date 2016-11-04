@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
 
 class SettingsController: UITableViewController {
 
