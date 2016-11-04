@@ -8,20 +8,16 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-Curiosity.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -37,11 +33,6 @@
 			<true/>
 		</dict>
 		<key>92BB131FA876445E027D20AE23EA7B5F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D3AFC9AA79AB28732E0A2F033030C7D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
