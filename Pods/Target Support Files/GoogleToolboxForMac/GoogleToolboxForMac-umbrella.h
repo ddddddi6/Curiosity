@@ -1,6 +1,9 @@
+#ifdef __OBJC__
 #import <UIKit/UIKit.h>
+#endif
 
 #import "GTMDefines.h"
+#import "GTMLogger.h"
 #import "GTMNSData+zlib.h"
 
 FOUNDATION_EXPORT double GoogleToolboxForMacVersionNumber;

@@ -26,6 +26,7 @@
 /* Begin PBXFileReference section */
 		04CEB42C1DCC14B50035B1A5 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		04CEB42E1DCC1B1C0035B1A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		04EE64951DCC60D600790692 /* Curiosity.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Curiosity.entitlements; sourceTree = "<group>"; };
 		4F9743D91DBD9795001B6525 /* Curiosity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curiosity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9743DC1DBD9795001B6525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F9743E11DBD9795001B6525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		4F9743DB1DBD9795001B6525 /* Curiosity */ = {
 			isa = PBXGroup;
 			children = (
+				04EE64951DCC60D600790692 /* Curiosity.entitlements */,
 				4F9743F21DBDB632001B6525 /* Service */,
 				4F9743F11DBDB629001B6525 /* Controller */,
 				4F9743DC1DBD9795001B6525 /* AppDelegate.swift */,
@@ -165,6 +167,11 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = APNXQ4DTJ2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -388,6 +395,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Curiosity/Curiosity.entitlements;
 				DEVELOPMENT_TEAM = APNXQ4DTJ2;
 				INFOPLIST_FILE = Curiosity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -403,6 +411,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Curiosity/Curiosity.entitlements;
 				DEVELOPMENT_TEAM = APNXQ4DTJ2;
 				INFOPLIST_FILE = Curiosity/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
