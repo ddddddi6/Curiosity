@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0810"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5A3D8952FAB65B74402A7095B6A0BE07"
+               BlueprintIdentifier = "D3AFC9AA79AB28732E0A2F033030C7D9"
                BuildableName = "Pods_Curiosity.framework"
                BlueprintName = "Pods-Curiosity"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "5A3D8952FAB65B74402A7095B6A0BE07"
+            BlueprintIdentifier = "D3AFC9AA79AB28732E0A2F033030C7D9"
             BuildableName = "Pods_Curiosity.framework"
             BlueprintName = "Pods-Curiosity"
             ReferencedContainer = "container:Pods.xcodeproj">
@@ -60,6 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D3AFC9AA79AB28732E0A2F033030C7D9"
+            BuildableName = "Pods_Curiosity.framework"
+            BlueprintName = "Pods-Curiosity"
+            ReferencedContainer = "container:Pods.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
