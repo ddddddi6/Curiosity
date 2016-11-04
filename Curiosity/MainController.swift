@@ -26,6 +26,14 @@ class MainController: UIViewController {
         service.stop()
     }
     
+    @IBAction func settings(_ sender: Any) {
+        let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController()
+        controller?.modalTransitionStyle = .coverVertical
+        controller?.modalPresentationStyle = .fullScreen
+        present(controller!, animated: true, completion: nil)
+    }
+    
+    
     // network service
     let service = GoPiGoService()
     let speech = SpeechService()
