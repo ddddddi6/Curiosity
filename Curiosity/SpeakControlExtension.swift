@@ -10,28 +10,34 @@ import UIKit
 
 extension MainController {
 
-    func speakButtonPressed() {
-        // service.moveWithSteps(action: "rotate left", steps: 1)
-        
-        if speech.audioEngine.isRunning {
-            speech.audioEngine.stop()
-            speech.recognitionRequest?.endAudio()
-        } else {
-            speech.startRecording() { result in
-                print(result)
-                if (result == nil) {
-                    return
-                }
-                let text = result!.lowercased()
-                if (text.contains("forward")) {
-                    let steps = self.parseSteps(text: text, control: "forward")
-                    self.service.moveWithSteps(action: "move forward", steps: steps)
-                } else if (text.contains("backward")) {
-                    let steps = self.parseSteps(text: text, control: "backward")
-                    self.service.moveWithSteps(action: "move backward", steps: steps)
-                }
+    func startRecordingTask() {
+        if speechService.audioEngine.isRunning {
+            speechService.audioEngine.stop()
+            speechService.recognitionRequest?.endAudio()
+        }
+        speechService.startRecording() { result in
+            print(result)
+            if (result != nil) {
+                self.parseSpeech(result: result!)
             }
-            
+        }
+    }
+    
+    func stopRecordingTask() {
+        if speechService.audioEngine.isRunning {
+            speechService.audioEngine.stop()
+            speechService.recognitionRequest?.endAudio()
+        }
+    }
+    
+    func parseSpeech(result: String) {
+        let text = result.lowercased()
+        if (text.contains("forward")) {
+            let steps = self.parseSteps(text: text, control: "forward")
+            self.carService.moveWithSteps(action: "move forward", steps: steps)
+        } else if (text.contains("backward")) {
+            let steps = self.parseSteps(text: text, control: "backward")
+            self.carService.moveWithSteps(action: "move backward", steps: steps)
         }
     }
     

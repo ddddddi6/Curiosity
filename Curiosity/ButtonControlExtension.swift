@@ -13,7 +13,6 @@ extension MainController {
     
     func monitorControlButtons() {
         DispatchQueue.global(qos: .userInteractive).async {
-            // self.leftUp.state == .highlighted || self.rightUp.state == .highlighted || self.leftDown.state == .highlighted || self.rightDown.state == .highlighted
             while (true) {
                 usleep(10000)
                 var leftSpeed = 100
@@ -25,21 +24,21 @@ extension MainController {
                 }
                 
                 if (self.leftUp.state == .highlighted && self.rightUp.state == .highlighted) {
-                    self.service.moveContinuous(action: "move forward", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
+                    self.carService.moveContinuous(action: "move forward", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
                 } else if (self.leftDown.state == .highlighted && self.rightDown.state == .highlighted) {
-                    self.service.moveContinuous(action: "move backward", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
+                    self.carService.moveContinuous(action: "move backward", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
                 } else if (self.leftUp.state == .highlighted && self.rightDown.state == .highlighted) {
-                    self.service.moveContinuous(action: "rotate left", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
+                    self.carService.moveContinuous(action: "rotate left", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
                 } else if (self.leftDown.state == .highlighted && self.rightUp.state == .highlighted) {
-                    self.service.moveContinuous(action: "rotate right", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
+                    self.carService.moveContinuous(action: "rotate right", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
                 } else if (self.leftUp.state == .highlighted) {
-                    self.service.moveContinuous(action: "turn left", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
+                    self.carService.moveContinuous(action: "turn left", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
                 } else if (self.rightUp.state == .highlighted) {
-                    self.service.moveContinuous(action: "turn right", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
+                    self.carService.moveContinuous(action: "turn right", leftSpeed: leftSpeed, rightSpeed: rightSpeed)
                 } else if (self.leftDown.state == .highlighted) {
-                    self.service.moveContinuous(action: "move backward", leftSpeed: 0, rightSpeed: rightSpeed)
+                    self.carService.moveContinuous(action: "move backward", leftSpeed: 0, rightSpeed: rightSpeed)
                 } else if (self.rightDown.state == .highlighted) {
-                    self.service.moveContinuous(action: "move backward", leftSpeed: leftSpeed, rightSpeed: 0)
+                    self.carService.moveContinuous(action: "move backward", leftSpeed: leftSpeed, rightSpeed: 0)
                 }
             }
         }
