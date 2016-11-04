@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04CEB42D1DCC14B50035B1A5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEB42C1DCC14B50035B1A5 /* SettingsController.swift */; };
+		04CEB42F1DCC1B1C0035B1A5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 04CEB42E1DCC1B1C0035B1A5 /* GoogleService-Info.plist */; };
 		078E2F3A191803AA0EAB736A /* Pods_Curiosity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B677D9D612852C7BE244FF5 /* Pods_Curiosity.framework */; };
 		4F9743DD1DBD9795001B6525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9743DC1DBD9795001B6525 /* AppDelegate.swift */; };
 		4F9743E21DBD9795001B6525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9743E01DBD9795001B6525 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		04CEB42C1DCC14B50035B1A5 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
+		04CEB42E1DCC1B1C0035B1A5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4F9743D91DBD9795001B6525 /* Curiosity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curiosity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9743DC1DBD9795001B6525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F9743E11DBD9795001B6525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				4F9743F11DBDB629001B6525 /* Controller */,
 				4F9743DC1DBD9795001B6525 /* AppDelegate.swift */,
 				4F9743E01DBD9795001B6525 /* Main.storyboard */,
+				04CEB42E1DCC1B1C0035B1A5 /* GoogleService-Info.plist */,
 				4F9743E61DBD9795001B6525 /* Assets.xcassets */,
 				4F9743E81DBD9795001B6525 /* LaunchScreen.storyboard */,
 				4F9743EB1DBD9795001B6525 /* Info.plist */,
@@ -190,6 +193,7 @@
 			files = (
 				4F9743EA1DBD9795001B6525 /* LaunchScreen.storyboard in Resources */,
 				4F9743E71DBD9795001B6525 /* Assets.xcassets in Resources */,
+				04CEB42F1DCC1B1C0035B1A5 /* GoogleService-Info.plist in Resources */,
 				4F9743E21DBD9795001B6525 /* Main.storyboard in Resources */,
 				4FAE2F5C1DCC0DE200EBCED0 /* Settings.storyboard in Resources */,
 			);
@@ -240,7 +244,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
