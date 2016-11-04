@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04CEB42D1DCC14B50035B1A5 /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEB42C1DCC14B50035B1A5 /* SettingsController.swift */; };
 		078E2F3A191803AA0EAB736A /* Pods_Curiosity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B677D9D612852C7BE244FF5 /* Pods_Curiosity.framework */; };
 		4F9743DD1DBD9795001B6525 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9743DC1DBD9795001B6525 /* AppDelegate.swift */; };
 		4F9743E21DBD9795001B6525 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F9743E01DBD9795001B6525 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04CEB42C1DCC14B50035B1A5 /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		4F9743D91DBD9795001B6525 /* Curiosity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Curiosity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F9743DC1DBD9795001B6525 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4F9743E11DBD9795001B6525 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				4F9743F31DBDB674001B6525 /* MainController.swift */,
 				4F9743F71DBDCD1B001B6525 /* ButtonControlExtension.swift */,
 				4F9743F91DBF2A76001B6525 /* SpeakControlExtension.swift */,
+				04CEB42C1DCC14B50035B1A5 /* SettingsController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04CEB42D1DCC14B50035B1A5 /* SettingsController.swift in Sources */,
 				4F9743F81DBDCD1B001B6525 /* ButtonControlExtension.swift in Sources */,
 				4F9743F61DBDBBC8001B6525 /* GoPiGoService.swift in Sources */,
 				4F9743E51DBD9795001B6525 /* Curiosity.xcdatamodeld in Sources */,
