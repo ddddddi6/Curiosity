@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UNUserNotificationCenter.current().delegate = self
             // For iOS 10 data message (sent via FCM)
             FIRMessaging.messaging().remoteMessageDelegate = self
-            
+            FIRMessaging.messaging().subscribe(toTopic: "mars")
         } else {
             let settings: UIUserNotificationSettings =
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)

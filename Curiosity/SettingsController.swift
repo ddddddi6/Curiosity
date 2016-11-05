@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseInstanceID
+import FirebaseMessaging
 
 class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
@@ -17,6 +20,9 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let token = FIRInstanceID.instanceID().token()
+        print(token)
         
         // popup a picker view when user start edit the textfield
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height / 2.5))

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -39,7 +39,7 @@
                                     <constraint firstAttribute="height" constant="50" id="1a9-VH-VAF"/>
                                     <constraint firstAttribute="width" constant="50" id="rpi-ex-uSI"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Circled Down 2 Filled-100"/>
+                                <state key="normal" title="Button" image="left down"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-ev-vwf">
                                 <rect key="frame" x="25" y="300" width="50" height="50"/>
@@ -62,7 +62,7 @@
                                     <constraint firstAttribute="width" constant="50" id="4Tl-o5-Qro"/>
                                     <constraint firstAttribute="height" constant="50" id="b3e-bh-K2q"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Circled Up 2 Filled-100"/>
+                                <state key="normal" title="Button" image="left up"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-KM-Cm2">
                                 <rect key="frame" x="592" y="113" width="50" height="50"/>
@@ -73,7 +73,7 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="mAC-f5-A20"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="y5Z-3V-CXy"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Circled Up 2 Filled-100"/>
+                                <state key="normal" title="Button" image="right up"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZs-8F-OAX">
                                 <rect key="frame" x="592" y="45" width="50" height="50"/>
@@ -99,7 +99,7 @@
                                     <constraint firstAttribute="height" constant="50" id="eSW-nt-Uvt"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="fs5-PE-pdV"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="Circled Down 2 Filled-100"/>
+                                <state key="normal" title="Button" image="right down"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lV-IO-EBq">
                                 <rect key="frame" x="592" y="300" width="50" height="50"/>
@@ -161,10 +161,12 @@
     </scenes>
     <resources>
         <image name="Cancel Filled-100" width="100" height="100"/>
-        <image name="Circled Down 2 Filled-100" width="100" height="100"/>
-        <image name="Circled Up 2 Filled-100" width="100" height="100"/>
         <image name="Microphone Filled-100" width="100" height="100"/>
         <image name="Settings Filled-100" width="100" height="100"/>
+        <image name="left down" width="100" height="100"/>
+        <image name="left up" width="100" height="100"/>
+        <image name="right down" width="100" height="100"/>
+        <image name="right up" width="100" height="100"/>
     </resources>
     <color key="tintColor" red="0.75686274509803919" green="0.26666666666666666" blue="0.054901960784313725" alpha="1" colorSpace="calibratedRGB"/>
 </document>
