@@ -19,7 +19,7 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         super.viewDidLoad()
         
         // popup a picker view when user start edit the textfield
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height / 2.5))
         pickerView.backgroundColor = .white
         pickerView.showsSelectionIndicator = true
         pickerView.delegate = self
@@ -53,7 +53,15 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     func donePicker(_ sender: UIBarButtonItem) {
-        
+        if minField.isEditing {
+            minField.resignFirstResponder()
+        } else if maxField.isEditing {
+            maxField.resignFirstResponder()
+        }
+    }
+    
+    @IBAction func doneSetting(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
     }
     
     // Pickerview settings
