@@ -16,8 +16,8 @@ extension MainController {
             speechService.recognitionRequest?.endAudio()
         }
         speechService.startRecording() { result in
-            print(result)
             if (result != nil) {
+                self.setMessage(text: "\"" + result! + "\"")
                 self.parseSpeech(result: result!)
             }
         }
@@ -32,28 +32,43 @@ extension MainController {
     
     func parseSpeech(result: String) {
         let text = result.lowercased()
-        if (text.contains("forward")) {
-            let steps = self.parseSteps(text: text, control: "forward")
-            self.carService.moveWithSteps(action: "move forward", steps: steps)
-        } else if (text.contains("backward")) {
-            let steps = self.parseSteps(text: text, control: "backward")
-            self.carService.moveWithSteps(action: "move backward", steps: steps)
+        let number = parseNumberInString(text: text)
+        let command = parseCommandInSpeech(text: text)
+        if (command == nil) {
+            return
+        }
+        if (command!.contains("move")) {
+            self.carService.moveWithSteps(action: command!, steps: number ?? 10)
+        } else if (command!.contains("rotate")) {
+            let degree = Double(number ?? 90)
+            let steps = Int(degree / 360.0 * 33.0)
+            self.carService.moveWithSteps(action: command!, steps: steps)
         }
     }
     
-    func parseSteps(text: String, control: String) -> Int {
-        var steps = 10
-        if (text.contains("steps")) {
-            let count = self.parseCount(result: text, after: "control", before: "steps")
-            if (count != nil) {
-                steps = count!
+    func parseNumberInString(text: String) -> Int? {
+        let strArr = text.components(separatedBy: " ")
+        for item in strArr {
+            let components = item.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
+            let part = components.joined()
+            if let intVal = Int(part) {
+                return intVal
             }
         }
-        return steps
+        return nil
     }
     
-    func parseCount(result: String, after: String, before: String) -> Int? {
-        let count = result.replacingOccurrences(of: after + " ", with: "").replacingOccurrences(of: " " + before, with: "")
-        return Int(count)
+    func parseCommandInSpeech(text: String) -> String? {
+        if (text.contains("forward")) {
+            return "move forward"
+        } else if (text.contains("back")) {
+            return "move backward"
+        } else if (text.contains("left")) {
+            return "rotate left"
+        } else if (text.contains("right")) {
+            return "rotate right"
+        } else {
+            return nil
+        }
     }
 }

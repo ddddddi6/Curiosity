@@ -16,6 +16,10 @@ class MainController: UIViewController {
     @IBOutlet var rightUp: UIButton!
     @IBOutlet var rightDown: UIButton!
     
+    @IBOutlet var message: UILabel!
+    
+    @IBOutlet var liveVideo: UIWebView!
+    
     @IBAction func speekButtonTouchDown(_ sender: UIButton) {
         startRecordingTask()
     }
@@ -40,11 +44,25 @@ class MainController: UIViewController {
     let speechService = SpeechService()
     // to detect gravity
     let motionManager = CMMotionManager()
-
+    
+    // Set message in the middle of the screen
+    func setMessage(text: String) {
+        message.text = text
+        let deadline = DispatchTime.now() + .seconds(5)
+        DispatchQueue.main.asyncAfter(deadline: deadline) {
+            if (self.message.text == text) {
+                self.message.text = ""
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         monitorControlButtons()
         motionManager.startDeviceMotionUpdates()
+        self.liveVideo.frame = self.view.bounds
+        self.liveVideo.scalesPageToFit = true
+        let request = URLRequest(url: URL(string: "http://172.24.1.1:8080/?action=stream")!)
+        liveVideo.loadRequest(request)
     }
-    
 }

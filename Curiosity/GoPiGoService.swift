@@ -13,7 +13,7 @@ import Alamofire
 class GoPiGoService: NSObject {
     
     // Car server
-    let url = "http://118.139.1.3:8000/"
+    let url = "http://172.24.1.1:8000/"
     var request: DataRequest?
     
     // Stop car
@@ -39,6 +39,13 @@ class GoPiGoService: NSObject {
                 self.request = nil
             })
         }
+    }
+    
+    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+        URLSession.shared.dataTask(with: url) {
+            (data, response, error) in
+            completion(data, response, error)
+            }.resume()
     }
     
     
