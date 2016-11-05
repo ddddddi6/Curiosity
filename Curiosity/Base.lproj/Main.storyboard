@@ -132,6 +132,7 @@
                     <connections>
                         <outlet property="leftDown" destination="FZk-VV-d8F" id="siR-yQ-6Nl"/>
                         <outlet property="leftUp" destination="ClI-VO-KMa" id="GaY-OJ-smZ"/>
+                        <outlet property="message" destination="MUT-u7-WsN" id="7hj-Zk-cYh"/>
                         <outlet property="rightDown" destination="h7N-Jv-EEm" id="I2e-2a-umv"/>
                         <outlet property="rightUp" destination="KR6-KM-Cm2" id="5fv-dW-day"/>
                     </connections>
