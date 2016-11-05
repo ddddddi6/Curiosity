@@ -18,6 +18,8 @@ class MainController: UIViewController {
     
     @IBOutlet var message: UILabel!
     
+    @IBOutlet var liveVideo: UIWebView!
+    
     @IBAction func speekButtonTouchDown(_ sender: UIButton) {
         startRecordingTask()
     }
@@ -53,10 +55,14 @@ class MainController: UIViewController {
             }
         }
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         monitorControlButtons()
         motionManager.startDeviceMotionUpdates()
+        self.liveVideo.frame = self.view.bounds
+        self.liveVideo.scalesPageToFit = true
+        let request = URLRequest(url: URL(string: "http://172.24.1.1:8080/?action=stream")!)
+        liveVideo.loadRequest(request)
     }
 }

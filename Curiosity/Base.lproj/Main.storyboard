@@ -21,6 +21,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <webView autoresizesSubviews="NO" opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="4QC-sd-jbm">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <dataDetectorType key="dataDetectorTypes"/>
+                            </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting ..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUT-u7-WsN">
                                 <rect key="frame" x="280" y="177" width="107" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -111,14 +116,19 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="4QC-sd-jbm" secondAttribute="bottom" id="3p6-lh-DVI"/>
+                            <constraint firstAttribute="trailing" secondItem="4QC-sd-jbm" secondAttribute="trailing" id="8eI-cL-Md2"/>
                             <constraint firstItem="IZs-8F-OAX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="BgL-HM-EzU"/>
                             <constraint firstAttribute="trailing" secondItem="IZs-8F-OAX" secondAttribute="trailing" constant="25" id="C0f-tZ-qIm"/>
+                            <constraint firstItem="4QC-sd-jbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H8N-jn-RRR"/>
                             <constraint firstAttribute="trailing" secondItem="2lV-IO-EBq" secondAttribute="trailing" constant="25" id="INc-5f-S39"/>
                             <constraint firstItem="KR6-KM-Cm2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="K7q-e7-hYw"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="dbI-ev-vwf" secondAttribute="bottom" constant="25" id="Krc-5U-Bcx"/>
+                            <constraint firstItem="4QC-sd-jbm" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="LNI-PF-y5X"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2lV-IO-EBq" secondAttribute="bottom" constant="25" id="R3b-bH-sqe"/>
                             <constraint firstItem="ClI-VO-KMa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="SCa-6l-vVb"/>
                             <constraint firstAttribute="trailing" secondItem="KR6-KM-Cm2" secondAttribute="trailing" constant="25" id="V3m-0j-vym"/>
+                            <constraint firstItem="4QC-sd-jbm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="YGz-gr-wyn"/>
                             <constraint firstItem="h7N-Jv-EEm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="Z2E-Ku-uD3"/>
                             <constraint firstItem="dbI-ev-vwf" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="aG6-rU-uac"/>
                             <constraint firstItem="FZk-VV-d8F" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="cpe-sp-zsv"/>
@@ -126,12 +136,14 @@
                             <constraint firstItem="ClI-VO-KMa" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="jAu-Ud-qeL"/>
                             <constraint firstItem="MUT-u7-WsN" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="je4-O3-3Ol"/>
                             <constraint firstItem="MUT-u7-WsN" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="njL-En-ciw"/>
+                            <constraint firstItem="4QC-sd-jbm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="p57-Yn-t6G"/>
                             <constraint firstItem="FZk-VV-d8F" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="50" id="p7G-3G-ifs"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="leftDown" destination="FZk-VV-d8F" id="siR-yQ-6Nl"/>
                         <outlet property="leftUp" destination="ClI-VO-KMa" id="GaY-OJ-smZ"/>
+                        <outlet property="liveVideo" destination="4QC-sd-jbm" id="yug-6e-Zmz"/>
                         <outlet property="message" destination="MUT-u7-WsN" id="7hj-Zk-cYh"/>
                         <outlet property="rightDown" destination="h7N-Jv-EEm" id="I2e-2a-umv"/>
                         <outlet property="rightUp" destination="KR6-KM-Cm2" id="5fv-dW-day"/>
@@ -139,7 +151,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.59999999999999" y="120.08995502248877"/>
+            <point key="canvasLocation" x="117.39130434782609" y="119.2"/>
         </scene>
     </scenes>
     <resources>
