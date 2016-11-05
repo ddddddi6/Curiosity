@@ -17,6 +17,7 @@ extension MainController {
         }
         speechService.startRecording() { result in
             if (result != nil) {
+                self.setMessage(text: "\"" + result! + "\"")
                 self.parseSpeech(result: result!)
             }
         }
@@ -33,9 +34,6 @@ extension MainController {
         let text = result.lowercased()
         let number = parseNumberInString(text: text)
         let command = parseCommandInSpeech(text: text)
-        print(result)
-        print(number)
-        print(command)
         if (command == nil) {
             return
         }
