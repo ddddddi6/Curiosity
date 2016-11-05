@@ -2,89 +2,89 @@
 //  SettingsController.swift
 //  Curiosity
 //
-//  Created by Dee on 4/11/16.
+//  Created by Dee on 5/11/16.
 //  Copyright © 2016 HaoBoji. All rights reserved.
 //
 
 import UIKit
-import Firebase
-import FirebaseInstanceID
-import FirebaseMessaging
 
-class SettingsController: UITableViewController {
+class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBOutlet var maxField: UITextField!
+    @IBOutlet var minField: UITextField!
+    
+    var values = Array(-40...50)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // popup a picker view when user start edit the textfield
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width / 3, height: self.view.frame.size.height))
+        pickerView.backgroundColor = .white
+        pickerView.showsSelectionIndicator = true
+        pickerView.delegate = self
+        
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor.black
+        toolBar.sizeToFit()
+        
+        // define the picker view
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(SettingsController.donePicker(_:)))
+        
+        
+        toolBar.setItems([doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        
+        minField.inputView = pickerView
+        minField.inputAccessoryView = toolBar
+        
+        maxField.inputView = pickerView
+        maxField.inputAccessoryView = toolBar
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+    
+    func donePicker(_ sender: UIBarButtonItem) {
+        
     }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+    
+    // Pickerview settings
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
     }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return values.count
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        let temp = String(values[row])
+        return temp
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if minField.isEditing {
+            let temp = String(values[row])
+            minField.text = temp
+        } else if maxField.isEditing {
+            let temp = String(values[row])
+            maxField.text = temp
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+    
+//    @IBAction func setMin(_ sender: UITextField) {
+//    }
+//
+//    @IBAction func setMax(_ sender: UITextField) {
+//    }
     /*
     // MARK: - Navigation
 
