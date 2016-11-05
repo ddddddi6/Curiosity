@@ -34,9 +34,6 @@
                                     <constraint firstAttribute="width" constant="50" id="rpi-ex-uSI"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Circled Down 2 Filled-100"/>
-                                <connections>
-                                    <action selector="controlButtonChanged:" destination="BYZ-38-t0r" eventType="touchDown" id="8XB-Jl-CYv"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-ev-vwf">
                                 <rect key="frame" x="25" y="300" width="50" height="50"/>
@@ -48,7 +45,6 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="Cancel Filled-100"/>
                                 <connections>
-                                    <action selector="controlButtonChanged:" destination="BYZ-38-t0r" eventType="touchDown" id="d06-mb-DIz"/>
                                     <action selector="stopCar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngH-IZ-bNl"/>
                                 </connections>
                             </button>
@@ -59,9 +55,6 @@
                                     <constraint firstAttribute="height" constant="50" id="b3e-bh-K2q"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Circled Up 2 Filled-100"/>
-                                <connections>
-                                    <action selector="controlButtonChanged:" destination="BYZ-38-t0r" eventType="touchDown" id="eXF-Y2-4Ga"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-KM-Cm2">
                                 <rect key="frame" x="592" y="113" width="50" height="50"/>
@@ -72,9 +65,6 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="y5Z-3V-CXy"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Circled Up 2 Filled-100"/>
-                                <connections>
-                                    <action selector="controlButtonChanged:" destination="BYZ-38-t0r" eventType="touchDown" id="7YY-lV-ttf"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZs-8F-OAX">
                                 <rect key="frame" x="592" y="45" width="50" height="50"/>
@@ -88,7 +78,6 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="Settings Filled-100"/>
                                 <connections>
-                                    <action selector="controlButtonChanged:" destination="BYZ-38-t0r" eventType="touchDown" id="6Q9-Au-PFt"/>
                                     <action selector="settings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M6m-v9-Hcr"/>
                                 </connections>
                             </button>
@@ -101,9 +90,6 @@
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="fs5-PE-pdV"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="Circled Down 2 Filled-100"/>
-                                <connections>
-                                    <action selector="controlButtonChanged:" destination="BYZ-38-t0r" eventType="touchDown" id="Wa7-V9-CK6"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2lV-IO-EBq">
                                 <rect key="frame" x="592" y="300" width="50" height="50"/>

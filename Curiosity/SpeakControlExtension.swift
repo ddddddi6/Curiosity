@@ -58,12 +58,11 @@ extension MainController {
     }
     
     func parseNumberInString(text: String) -> Int? {
-        let strArr = split(text) { $0 == " " }
+        let strArr = text.components(separatedBy: " ")
         for item in strArr {
-            let components = item.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
-            let part = "".join(components)
-            
-            if let intVal = part.toInt() {
+            let components = item.components(separatedBy: NSCharacterSet.decimalDigits.inverted)
+            let part = components.joined()
+            if let intVal = Int(part) {
                 return intVal
             }
         }

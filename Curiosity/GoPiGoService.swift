@@ -13,7 +13,7 @@ import Alamofire
 class GoPiGoService: NSObject {
     
     // Car server
-    let url = "http://118.139.1.3:8000/"
+    let url = "http://49.127.109.179:8000/"
     var request: DataRequest?
     
     // Stop car
