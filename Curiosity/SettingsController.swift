@@ -109,15 +109,7 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             let temp = String(values[row])
             maxField.text = temp
         }
-        
-        
     }
-    
-//    @IBAction func setMin(_ sender: UITextField) {
-//    }
-//
-//    @IBAction func setMax(_ sender: UITextField) {
-//    }
     /*
     // MARK: - Navigation
 
