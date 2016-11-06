@@ -37,7 +37,7 @@
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dxx-vr-3cN">
-                                <rect key="frame" x="140" y="74" width="386" height="133"/>
+                                <rect key="frame" x="141" y="74" width="386" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri4-wT-9wG">
                                         <rect key="frame" x="99" y="25" width="154" height="21"/>
@@ -87,6 +87,8 @@
                                     <constraint firstItem="Ri4-wT-9wG" firstAttribute="leading" secondItem="KVr-b1-nZL" secondAttribute="leading" id="RV4-SC-EIj"/>
                                     <constraint firstItem="oMu-T4-ley" firstAttribute="top" secondItem="dxx-vr-3cN" secondAttribute="top" constant="24" id="Ru7-aj-Kc1"/>
                                     <constraint firstItem="Ri4-wT-9wG" firstAttribute="trailing" secondItem="KVr-b1-nZL" secondAttribute="trailing" id="UXs-MV-DNf"/>
+                                    <constraint firstAttribute="height" constant="133" id="YRE-ry-cR1"/>
+                                    <constraint firstAttribute="width" constant="386" id="eah-Np-9UG"/>
                                     <constraint firstItem="ygd-mw-tZW" firstAttribute="top" secondItem="dxx-vr-3cN" secondAttribute="top" constant="37" id="fJI-I8-saI"/>
                                     <constraint firstItem="Ri4-wT-9wG" firstAttribute="leading" secondItem="ygd-mw-tZW" secondAttribute="trailing" constant="16" id="iGL-I6-Ug8"/>
                                     <constraint firstItem="oMu-T4-ley" firstAttribute="leading" secondItem="t1p-ke-rmx" secondAttribute="leading" id="mfh-qw-wVj"/>
@@ -98,10 +100,8 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bRk-M1-NGH" secondAttribute="trailing" id="RJD-bZ-ICZ"/>
                             <constraint firstItem="dxx-vr-3cN" firstAttribute="top" secondItem="bRk-M1-NGH" secondAttribute="bottom" constant="30" id="UZg-bE-3EV"/>
-                            <constraint firstItem="dxx-vr-3cN" firstAttribute="leading" secondItem="wKG-EK-9a6" secondAttribute="leading" constant="140" id="bJ7-pG-hKP"/>
                             <constraint firstItem="bRk-M1-NGH" firstAttribute="centerX" secondItem="dxx-vr-3cN" secondAttribute="centerX" id="fGl-d3-EdK"/>
                             <constraint firstItem="bRk-M1-NGH" firstAttribute="top" secondItem="wKG-EK-9a6" secondAttribute="top" id="n9m-kf-HUu"/>
-                            <constraint firstItem="uyq-cO-VjJ" firstAttribute="top" secondItem="dxx-vr-3cN" secondAttribute="bottom" constant="168" id="plk-B4-dwf"/>
                             <constraint firstItem="bRk-M1-NGH" firstAttribute="leading" secondItem="wKG-EK-9a6" secondAttribute="leading" id="w84-3C-fKH"/>
                         </constraints>
                     </view>
