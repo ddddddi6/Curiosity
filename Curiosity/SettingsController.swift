@@ -16,7 +16,7 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     @IBOutlet var maxField: UITextField!
     @IBOutlet var minField: UITextField!
     
-    var values = Array(-40...50)
+    var values = Array(-20...40)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +49,10 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         maxField.inputView = pickerView
         maxField.inputAccessoryView = toolBar
 
-
+        if ((TemperatureService.tempService.getData()) != nil) {
+            minField.text = String(TemperatureService.tempService.getData()!["min"]!)
+            maxField.text = String(TemperatureService.tempService.getData()!["max"]!)
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -67,7 +70,21 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     @IBAction func doneSetting(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+        if (maxField.text == "" || minField.text == "") {
+            self.dismiss(animated: true, completion: nil)
+        } else if (Int(maxField.text!)! > Int(minField.text!)!) {
+            TemperatureService.tempService.saveData(minTempSetting: Int(minField.text!)!, maxTempSetting: Int(maxField.text!)!)
+            self.dismiss(animated: true, completion: nil)
+        } else {
+            let messageString: String = "Maximum Temperature should be great than Minimum Temperature"
+            // Setup an alert to warn user
+            // UIAlertController manages an alert instance
+            let alertController = UIAlertController(title: "Alert", message: messageString, preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     // Pickerview settings
@@ -93,12 +110,6 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
             maxField.text = temp
         }
     }
-    
-//    @IBAction func setMin(_ sender: UITextField) {
-//    }
-//
-//    @IBAction func setMax(_ sender: UITextField) {
-//    }
     /*
     // MARK: - Navigation
 
