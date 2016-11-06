@@ -28,6 +28,11 @@
                                 </constraints>
                                 <items>
                                     <navigationItem title="Settings" id="IyZ-6Y-vM9">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="d1K-2L-m7A">
+                                            <connections>
+                                                <action selector="cancelSetting:" destination="Q7w-Cu-sBu" id="A4X-KZ-UlS"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="mbe-nE-qt1">
                                             <connections>
                                                 <action selector="doneSetting:" destination="Q7w-Cu-sBu" id="VhR-ZJ-jJX"/>

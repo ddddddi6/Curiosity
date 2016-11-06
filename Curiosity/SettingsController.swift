@@ -69,9 +69,20 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         }
     }
     
+    @IBAction func cancelSetting(_ sender: UIBarButtonItem) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func doneSetting(_ sender: UIBarButtonItem) {
         if (maxField.text == "" || minField.text == "") {
-            self.dismiss(animated: true, completion: nil)
+            let messageString: String = "Please select a valid value"
+            // Setup an alert to warn user
+            // UIAlertController manages an alert instance
+            let alertController = UIAlertController(title: "Alert", message: messageString, preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+            
+            self.present(alertController, animated: true, completion: nil)
         } else if (Int(maxField.text!)! > Int(minField.text!)!) {
             TemperatureService.tempService.saveData(minTempSetting: Int(minField.text!)!, maxTempSetting: Int(maxField.text!)!)
             self.dismiss(animated: true, completion: nil)
