@@ -17,8 +17,9 @@ class MainController: UIViewController {
     @IBOutlet var rightDown: UIButton!
     
     @IBOutlet var message: UILabel!
-    
     @IBOutlet var liveVideo: UIWebView!
+    @IBOutlet var temperatureButton: UIButton!
+    
     
     @IBAction func speekButtonTouchDown(_ sender: UIButton) {
         startRecordingTask()
@@ -32,10 +33,17 @@ class MainController: UIViewController {
         carService.stop()
     }
     
+    @IBAction func temperature(_ sender: UIButton) {
+        let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController()
+        controller?.modalTransitionStyle = .coverVertical
+        controller?.modalPresentationStyle = .formSheet
+        present(controller!, animated: true, completion: nil)
+    }
+    
     @IBAction func settings(_ sender: Any) {
         let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController()
         controller?.modalTransitionStyle = .coverVertical
-        controller?.modalPresentationStyle = .fullScreen
+        controller?.modalPresentationStyle = .formSheet
         present(controller!, animated: true, completion: nil)
     }
     

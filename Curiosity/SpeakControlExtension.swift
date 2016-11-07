@@ -64,9 +64,9 @@ extension MainController {
         } else if (text.contains("back")) {
             return "move backward"
         } else if (text.contains("left")) {
-            return "rotate left"
-        } else if (text.contains("right")) {
             return "rotate right"
+        } else if (text.contains("right")) {
+            return "rotate left"
         } else {
             return nil
         }

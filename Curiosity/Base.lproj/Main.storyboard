@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,13 +28,12 @@
                             </webView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MUT-u7-WsN">
                                 <rect key="frame" x="333.5" y="25" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.75686274509999996" green="0.2666666667" blue="0.054901960780000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="20"/>
+                                <color key="textColor" red="0.90588235289999997" green="0.29803921570000003" blue="0.23529411759999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZk-VV-d8F">
                                 <rect key="frame" x="25" y="213" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1a9-VH-VAF"/>
                                     <constraint firstAttribute="width" constant="50" id="rpi-ex-uSI"/>
@@ -43,7 +42,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-ev-vwf">
                                 <rect key="frame" x="25" y="300" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Ut7-xo-FvR"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="fGe-ON-jCv"/>
@@ -57,7 +55,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ClI-VO-KMa">
                                 <rect key="frame" x="25" y="113" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="4Tl-o5-Qro"/>
                                     <constraint firstAttribute="height" constant="50" id="b3e-bh-K2q"/>
@@ -66,7 +63,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KR6-KM-Cm2">
                                 <rect key="frame" x="592" y="113" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="IkT-yt-BOI"/>
                                     <constraint firstAttribute="height" constant="50" id="KE4-iG-Bs8"/>
@@ -75,24 +71,8 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="right up"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IZs-8F-OAX">
-                                <rect key="frame" x="592" y="45" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="29i-ZK-W3U"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="50" id="5WQ-gG-bDG"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="DSd-sK-lkr"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="Mfb-sK-SkR"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="h61-4D-sxg"/>
-                                    <constraint firstAttribute="height" constant="50" id="wc3-He-lSS"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="Settings Filled-100"/>
-                                <connections>
-                                    <action selector="settings:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M6m-v9-Hcr"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h7N-Jv-EEm">
                                 <rect key="frame" x="592" y="213" width="50" height="50"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="50" id="5wC-qN-dEb"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="V8Y-ZG-Nbk"/>
@@ -118,13 +98,23 @@
                                     <action selector="speekButtonTouchUp:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="j0Y-dh-fBz"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8az-0X-oAm">
+                                <rect key="frame" x="25" y="20" width="79" height="65"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="37"/>
+                                <state key="normal" title="37C°">
+                                    <color key="titleColor" red="0.90588235294117647" green="0.29803921568627451" blue="0.23529411764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="temperature:" destination="BYZ-38-t0r" eventType="touchUpInside" id="JIR-ek-Oke"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="8az-0X-oAm" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="1jo-YU-JWJ"/>
+                            <constraint firstItem="8az-0X-oAm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="25" id="22z-6h-jw2"/>
                             <constraint firstAttribute="bottom" secondItem="4QC-sd-jbm" secondAttribute="bottom" id="3p6-lh-DVI"/>
                             <constraint firstAttribute="trailing" secondItem="4QC-sd-jbm" secondAttribute="trailing" id="8eI-cL-Md2"/>
-                            <constraint firstItem="IZs-8F-OAX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="25" id="BgL-HM-EzU"/>
-                            <constraint firstAttribute="trailing" secondItem="IZs-8F-OAX" secondAttribute="trailing" constant="25" id="C0f-tZ-qIm"/>
                             <constraint firstItem="4QC-sd-jbm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="H8N-jn-RRR"/>
                             <constraint firstAttribute="trailing" secondItem="2lV-IO-EBq" secondAttribute="trailing" constant="25" id="INc-5f-S39"/>
                             <constraint firstItem="KR6-KM-Cm2" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-50" id="K7q-e7-hYw"/>
@@ -152,6 +142,7 @@
                         <outlet property="message" destination="MUT-u7-WsN" id="7hj-Zk-cYh"/>
                         <outlet property="rightDown" destination="h7N-Jv-EEm" id="I2e-2a-umv"/>
                         <outlet property="rightUp" destination="KR6-KM-Cm2" id="5fv-dW-day"/>
+                        <outlet property="temperatureButton" destination="8az-0X-oAm" id="JK2-AV-Vy4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -161,8 +152,7 @@
     </scenes>
     <resources>
         <image name="Cancel Filled-100" width="100" height="100"/>
-        <image name="Microphone Filled-100" width="100" height="100"/>
-        <image name="Settings Filled-100" width="100" height="100"/>
+        <image name="Microphone Filled-100" width="96" height="96"/>
         <image name="left down" width="100" height="100"/>
         <image name="left up" width="100" height="100"/>
         <image name="right down" width="100" height="100"/>
