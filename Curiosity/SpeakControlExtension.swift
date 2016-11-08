@@ -35,6 +35,12 @@ extension MainController {
         let number = parseNumberInString(text: text)
         let command = parseCommandInSpeech(text: text)
         if (command == nil) {
+            let errors = ["Make sure you speak English.", "I cannot understand.", "What?"]
+            let toSay = errors[Int(arc4random_uniform(3))]
+            let speechUtterance = AVSpeechUtterance(string: "Make sure you speak English.")
+            speechSynthesizer.stopSpeaking(at: .immediate)
+            speechSynthesizer.speak(speechUtterance)
+            
             return
         }
         if (command!.contains("move")) {
