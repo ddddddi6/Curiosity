@@ -21,22 +21,31 @@ class TemperatureService: NSObject {
     var maxTemp: Int?
     
     // Temperature server
-    let url = "http://118.138.161.114:3000/"
+    let url = "http://118.138.161.114"
     var request: DataRequest?
+    
+    // Get temperature
+    func getTemperature(completion: (_ text: String) -> Void) {
+        Alamofire.request(url + "/thermometer").responseJSON { (response) in
+            if (response.result.isSuccess) {
+                print(response.result.value)
+            }
+        }
+    }
     
     // set device token
     func setToken() {
         let token = FIRInstanceID.instanceID().token()
         print(token)
         
-        request = Alamofire.request(url + "token?token=" + token!).response(completionHandler: { (_) in
+        request = Alamofire.request(url + ":3000/" + "token?token=" + token!).response(completionHandler: { (_) in
             self.request = nil
         })
     }
     
     // Set temperature range
     func setRange(minTemp: Int, maxTemp: Int) {
-        request = Alamofire.request(url + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp)).response(completionHandler: { (_) in
+        request = Alamofire.request(url + ":3000/" + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp)).response(completionHandler: { (_) in
             self.request = nil
         })
     }

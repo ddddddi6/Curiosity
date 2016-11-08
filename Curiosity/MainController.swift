@@ -65,6 +65,10 @@ class MainController: UIViewController {
         }
     }
     
+    func setTemperature(text: String) {
+        temperatureButton.titleLabel?.text = text + "°C"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         monitorControlButtons()

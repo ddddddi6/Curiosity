@@ -59,23 +59,4 @@ class GoPiGoService: NSObject {
             }
         }
     }
-    
-    
-    
-//    func stop() {
-//        taskId = (taskId + 1)%1024
-//    }
-    
-//    
-//    func recursiveMove(count: Int) {
-//        stop()
-//        DispatchQueue.global(qos: .userInteractive).async {
-//            let currentTask = self.taskId
-//            while (currentTask == self.taskId) {
-//                self.move(action: "w")
-//                usleep(100000)
-//                print(1)
-//            }
-//        }
-//    }
 }
