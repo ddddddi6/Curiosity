@@ -12,6 +12,7 @@ import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
 import UserNotifications
+import Alamofire
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -47,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                selector: #selector(self.tokenRefreshNotification),
                                                name: .firInstanceIDTokenRefresh,
                                                object: nil)
-
         return true
     }
 

@@ -7,13 +7,39 @@
 //
 
 import UIKit
+import Alamofire
+import Firebase
+import FirebaseMessaging
+import FirebaseInstanceID
 
 class TemperatureService: NSObject {
     static let tempService = TemperatureService()
     
+    // Userdefaults
     let myDefaults = UserDefaults.standard
     var minTemp: Int?
     var maxTemp: Int?
+    
+    // Temperature server
+    let url = "http://118.138.161.114:3000/"
+    var request: DataRequest?
+    
+    // set device token
+    func setToken() {
+        let token = FIRInstanceID.instanceID().token()
+        print(token)
+        
+        request = Alamofire.request(url + "token?token=" + token!).response(completionHandler: { (_) in
+            self.request = nil
+        })
+    }
+    
+    // Set temperature range
+    func setRange(minTemp: Int, maxTemp: Int) {
+        request = Alamofire.request(url + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp)).response(completionHandler: { (_) in
+            self.request = nil
+        })
+    }
 
     // return saved settings
     func getData() -> [String:Int]? {
@@ -21,7 +47,7 @@ class TemperatureService: NSObject {
         return data
     }
     
-    // save game data to NSUserdefalts
+    // save defined temperature range data to NSUserdefalts
     func saveData(minTempSetting: Int, maxTempSetting: Int) {
         if (myDefaults.object(forKey: "saves") == nil) {
             // the savedMovie `NSUserDefaults` does not exist
@@ -41,6 +67,5 @@ class TemperatureService: NSObject {
             
             myDefaults.setValue(array, forKey: "saves")
         }
-        
     }
 }
