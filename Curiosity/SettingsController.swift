@@ -21,8 +21,6 @@ class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        TemperatureService.tempService.setToken()
-        
         // popup a picker view when user start edit the textfield
         let pickerView = UIPickerView(frame: CGRect(x: 0, y: 200, width: self.view.frame.size.width, height: self.view.frame.size.height / 2.5))
         pickerView.backgroundColor = .white
