@@ -104,7 +104,6 @@ class SpeechService: NSObject, SFSpeechRecognizerDelegate {
         do {
             try audioSession.setCategory(AVAudioSessionCategoryPlayback)
         } catch {
-            
         }
     }
     

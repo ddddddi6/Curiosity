@@ -42,14 +42,5 @@ extension MainController {
                 }
             }
         }
-        
-        DispatchQueue.global(qos: .background).async {
-            while(true) {
-                sleep(1)
-                TemperatureService.tempService.getTemperature(completion: { (result) in
-                    //
-                })
-            }
-        }
     }
 }

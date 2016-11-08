@@ -46,6 +46,8 @@ class MainController: UIViewController {
         controller?.modalTransitionStyle = .coverVertical
         controller?.modalPresentationStyle = .formSheet
         present(controller!, animated: true, completion: nil)
+        let request = URLRequest(url: URL(string: "http://172.24.1.1:8080/?action=stream")!)
+        liveVideo.loadRequest(request)
     }
     
     // network service
@@ -66,16 +68,27 @@ class MainController: UIViewController {
     }
     
     func setTemperature(text: String) {
-        temperatureButton.titleLabel?.text = text + "°C"
+        temperatureButton.setTitle(text + "°C", for: .normal)
+        temperatureButton.setTitle(text + "°C", for: .highlighted)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         monitorControlButtons()
         motionManager.startDeviceMotionUpdates()
+        carService.keepRunning()
         self.liveVideo.frame = self.view.bounds
         self.liveVideo.scalesPageToFit = true
         let request = URLRequest(url: URL(string: "http://172.24.1.1:8080/?action=stream")!)
         liveVideo.loadRequest(request)
+        // Sync temperature
+        DispatchQueue.global(qos: .background).async {
+            while(true) {
+                sleep(1)
+                TemperatureService.tempService.getTemperature(completion: { (result) in
+                    self.setTemperature(text: result)
+                })
+            }
+        }
     }
 }
