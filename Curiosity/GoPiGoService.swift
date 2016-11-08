@@ -14,7 +14,7 @@ import Starscream
 class GoPiGoService: NSObject {
     
     // Car server
-    let ip = "172.24.1.1"
+    let ip = "49.127.109.179"
     // Video server
     let videoURL: String
     // Car control url
