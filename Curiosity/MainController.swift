@@ -10,6 +10,7 @@ import UIKit
 import CoreMotion
 import AVFoundation
 
+// Main controller
 class MainController: UIViewController {
     
     @IBOutlet var leftUp: UIButton!
@@ -67,6 +68,7 @@ class MainController: UIViewController {
         }
     }
     
+    // update temperature of temperature button
     func setTemperature(text: String) {
         temperatureButton.setTitle(text + "°C", for: .normal)
         temperatureButton.setTitle(text + "°C", for: .highlighted)
@@ -74,9 +76,10 @@ class MainController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initializations
         monitorControlButtons()
         motionManager.startDeviceMotionUpdates()
-        carService.keepRunning()
+        // recieve video
         self.liveVideo.frame = self.view.bounds
         self.liveVideo.scalesPageToFit = true
         let request = URLRequest(url: URL(string: "http://172.24.1.1:8080/?action=stream")!)

@@ -12,6 +12,7 @@ import Firebase
 import FirebaseMessaging
 import FirebaseInstanceID
 
+// Service of static raspberry pi
 class TemperatureService: NSObject {
     static let tempService = TemperatureService()
     

@@ -30,11 +30,13 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.0)
   - GoogleToolboxForMac/NSData+zlib (2.1.0):
     - GoogleToolboxForMac/Defines (= 2.1.0)
+  - Starscream (2.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - Firebase/Core
   - Firebase/Messaging
+  - Starscream (~> 2.0.1)
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -46,7 +48,8 @@ SPEC CHECKSUMS:
   GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleToolboxForMac: 2b2596cbb7186865e98cadf2b1e262d851c2b168
+  Starscream: ce7a202d95615bd4113bc5a0f1932f1db8c808a4
 
-PODFILE CHECKSUM: 8211a742da01956f504694f0863738938a8795cd
+PODFILE CHECKSUM: 373ca6e1c987ca3f243ea5d67b0c6486b4025768
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.1.0.rc.2
