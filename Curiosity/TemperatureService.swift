@@ -35,6 +35,7 @@ class TemperatureService: NSObject {
     
     // Set temperature range
     func setRange(minTemp: Int, maxTemp: Int) {
+        // get device token
         let token = FIRInstanceID.instanceID().token()
         print(token)
         request = Alamofire.request(url + ":3000/" + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp) + "&token=" + token!).response(completionHandler: { (_) in
