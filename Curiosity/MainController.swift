@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreMotion
+import AVFoundation
 
 class MainController: UIViewController {
     
@@ -49,7 +50,7 @@ class MainController: UIViewController {
     
     // network service
     let carService = GoPiGoService()
-    let speechService = SpeechService()
+    var speechService = SpeechService()
     // to detect gravity
     let motionManager = CMMotionManager()
     

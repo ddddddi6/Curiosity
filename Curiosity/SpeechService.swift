@@ -11,10 +11,13 @@ import Speech
 
 class SpeechService: NSObject, SFSpeechRecognizerDelegate {
     
+    // vars for speech recognition
     let speechRecognizer = SFSpeechRecognizer(locale: Locale.init(identifier: "en-UK"))
     let audioEngine = AVAudioEngine()
     var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     var recognitionTask: SFSpeechRecognitionTask?
+    // to speek errors
+    let speechSynthesizer = AVSpeechSynthesizer()
     var enabled = false
     
     override init() {
@@ -41,11 +44,7 @@ class SpeechService: NSObject, SFSpeechRecognizerDelegate {
     }
     
     func startRecording(completion: @escaping (_ result: String?) -> Void) {
-        if recognitionTask != nil {
-            recognitionTask?.cancel()
-            recognitionTask = nil
-        }
-        
+        stopRecording()
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(AVAudioSessionCategoryRecord)
@@ -95,5 +94,25 @@ class SpeechService: NSObject, SFSpeechRecognizerDelegate {
         } catch {
             print("audioEngine couldn't start because of an error.")
         }
+    }
+    
+    func stopRecording() {
+        audioEngine.stop()
+        recognitionRequest?.endAudio()
+        recognitionTask?.cancel()
+        let audioSession = AVAudioSession.sharedInstance()
+        do {
+            try audioSession.setCategory(AVAudioSessionCategoryPlayback)
+        } catch {
+            
+        }
+    }
+    
+    func speakError() {
+        stopRecording()
+        let errors = ["Make sure you speak English.", "Sorry, I didn't recognize that.", "What?"]
+        let toSay = errors[Int(arc4random_uniform(3))]
+        let speechUtterance = AVSpeechUtterance(string: toSay)
+        speechSynthesizer.speak(speechUtterance)
     }
 }

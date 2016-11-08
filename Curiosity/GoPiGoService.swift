@@ -16,6 +16,9 @@ class GoPiGoService: NSObject {
     let url = "http://172.24.1.1:8000/"
     var request: DataRequest?
     
+    // Video server
+    let videoURL = "http://172.24.1.1:98/"
+    
     // Stop car
     func stop() {
         request = Alamofire.request(url + "stop").response(completionHandler: { (_) in
@@ -46,6 +49,15 @@ class GoPiGoService: NSObject {
             (data, response, error) in
             completion(data, response, error)
             }.resume()
+    }
+    
+    func keepRunning() {
+        DispatchQueue.global(qos: .userInitiated).async {
+            while (true) {
+                _ = Alamofire.request(self.videoURL).response(completionHandler: { (_) in })
+                sleep(10)
+            }
+        }
     }
     
     

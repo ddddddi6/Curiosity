@@ -7,14 +7,11 @@
 //
 
 import UIKit
+import AVFoundation
 
 extension MainController {
-
+    
     func startRecordingTask() {
-        if speechService.audioEngine.isRunning {
-            speechService.audioEngine.stop()
-            speechService.recognitionRequest?.endAudio()
-        }
         speechService.startRecording() { result in
             if (result != nil) {
                 self.setMessage(text: "\"" + result! + "\"")
@@ -24,10 +21,8 @@ extension MainController {
     }
     
     func stopRecordingTask() {
-        if speechService.audioEngine.isRunning {
-            speechService.audioEngine.stop()
-            speechService.recognitionRequest?.endAudio()
-        }
+        speechService.audioEngine.stop()
+        speechService.recognitionRequest?.endAudio()
     }
     
     func parseSpeech(result: String) {
@@ -35,12 +30,7 @@ extension MainController {
         let number = parseNumberInString(text: text)
         let command = parseCommandInSpeech(text: text)
         if (command == nil) {
-            let errors = ["Make sure you speak English.", "I cannot understand.", "What?"]
-            let toSay = errors[Int(arc4random_uniform(3))]
-            let speechUtterance = AVSpeechUtterance(string: "Make sure you speak English.")
-            speechSynthesizer.stopSpeaking(at: .immediate)
-            speechSynthesizer.speak(speechUtterance)
-            
+            speechService.speakError()
             return
         }
         if (command!.contains("move")) {
@@ -49,6 +39,7 @@ extension MainController {
             let degree = Double(number ?? 90)
             let steps = Int(degree / 360.0 * 33.0)
             self.carService.moveWithSteps(action: command!, steps: steps)
+        } else {
         }
     }
     
