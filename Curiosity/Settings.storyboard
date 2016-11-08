@@ -26,6 +26,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="hKe-dJ-F7X"/>
                                 </constraints>
+                                <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <navigationItem title="Settings" id="IyZ-6Y-vM9">
                                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="d1K-2L-m7A">
@@ -47,7 +48,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri4-wT-9wG">
                                         <rect key="frame" x="99" y="25" width="154" height="21"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="t1p-ke-rmx">
@@ -59,7 +60,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max Temperature" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KVr-b1-nZL">
                                         <rect key="frame" x="99" y="88" width="154" height="21"/>
                                         <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="19"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Temperature Filled-100" translatesAutoresizingMaskIntoConstraints="NO" id="ygd-mw-tZW">
@@ -78,7 +79,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="KVr-b1-nZL" firstAttribute="top" secondItem="Ri4-wT-9wG" secondAttribute="bottom" constant="42" id="0uK-AP-dIY"/>
                                     <constraint firstItem="t1p-ke-rmx" firstAttribute="top" secondItem="oMu-T4-ley" secondAttribute="bottom" constant="34" id="15c-aK-fF7"/>
@@ -101,7 +102,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.8489672144254049" green="0.32245188620355392" blue="0.3091511030991872" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bRk-M1-NGH" secondAttribute="trailing" id="RJD-bZ-ICZ"/>
                             <constraint firstItem="dxx-vr-3cN" firstAttribute="top" secondItem="bRk-M1-NGH" secondAttribute="bottom" constant="30" id="UZg-bE-3EV"/>

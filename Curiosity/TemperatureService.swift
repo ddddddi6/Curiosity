@@ -33,19 +33,12 @@ class TemperatureService: NSObject {
         }
     }
     
-    // set device token
-    func setToken() {
-        let token = FIRInstanceID.instanceID().token()
-        print(token)
-        
-        request = Alamofire.request(url + ":3000/" + "token?token=" + token!).response(completionHandler: { (_) in
-            self.request = nil
-        })
-    }
-    
     // Set temperature range
     func setRange(minTemp: Int, maxTemp: Int) {
-        request = Alamofire.request(url + ":3000/" + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp)).response(completionHandler: { (_) in
+        // get device token
+        let token = FIRInstanceID.instanceID().token()
+        print(token)
+        request = Alamofire.request(url + ":3000/" + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp) + "&token=" + token!).response(completionHandler: { (_) in
             self.request = nil
         })
     }
