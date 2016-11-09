@@ -12,6 +12,7 @@ import Firebase
 import FirebaseMessaging
 import FirebaseInstanceID
 
+// Service of static raspberry pi
 class TemperatureService: NSObject {
     static let tempService = TemperatureService()
     
@@ -21,14 +22,18 @@ class TemperatureService: NSObject {
     var maxTemp: Int?
     
     // Temperature server
-    let url = "http://118.138.161.114"
+    let url = "http://118.138.161.114:3000/"
     var request: DataRequest?
     
     // Get temperature
-    func getTemperature(completion: (_ text: String) -> Void) {
-        Alamofire.request(url + "/thermometer").responseJSON { (response) in
+    func getTemperature(completion: @escaping (_ text: String) -> Void) {
+        Alamofire.request(url + "currentbaro?timestamp=" + Date().timeIntervalSince1970.description).responseJSON { (response) in
             if (response.result.isSuccess) {
-                print(response.result.value)
+                let data = response.result.value as! [String: AnyObject]
+                let temperature = data["thermometer"] as? Int
+                if (temperature != nil) {
+                    completion(String(temperature!))
+                }
             }
         }
     }
@@ -38,7 +43,7 @@ class TemperatureService: NSObject {
         // get device token
         let token = FIRInstanceID.instanceID().token()
         print(token)
-        request = Alamofire.request(url + ":3000/" + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp) + "&token=" + token!).response(completionHandler: { (_) in
+        request = Alamofire.request(url + "personalTemperature?ltemp=" + String(minTemp) + "&htemp=" + String(maxTemp) + "&token=" + token!).response(completionHandler: { (_) in
             self.request = nil
         })
     }

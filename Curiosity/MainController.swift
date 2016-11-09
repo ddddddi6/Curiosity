@@ -10,6 +10,7 @@ import UIKit
 import CoreMotion
 import AVFoundation
 
+// Main controller
 class MainController: UIViewController {
     
     @IBOutlet var leftUp: UIButton!
@@ -21,27 +22,23 @@ class MainController: UIViewController {
     @IBOutlet var liveVideo: UIWebView!
     @IBOutlet var temperatureButton: UIButton!
     
-    
+    // Speak button did touch down
     @IBAction func speekButtonTouchDown(_ sender: UIButton) {
         startRecordingTask()
     }
     
+    //  Speak button did touch up
     @IBAction func speekButtonTouchUp(_ sender: UIButton) {
         stopRecordingTask()
     }
     
+    // Stop car
     @IBAction func stopCar(_ sender: UIButton) {
         carService.stop()
     }
     
+    // Temperature button did click
     @IBAction func temperature(_ sender: UIButton) {
-        let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController()
-        controller?.modalTransitionStyle = .coverVertical
-        controller?.modalPresentationStyle = .formSheet
-        present(controller!, animated: true, completion: nil)
-    }
-    
-    @IBAction func settings(_ sender: Any) {
         let controller = UIStoryboard(name: "Settings", bundle: nil).instantiateInitialViewController()
         controller?.modalTransitionStyle = .coverVertical
         controller?.modalPresentationStyle = .formSheet
@@ -65,17 +62,30 @@ class MainController: UIViewController {
         }
     }
     
+    // update temperature of temperature button
     func setTemperature(text: String) {
-        temperatureButton.titleLabel?.text = text + "°C"
+        temperatureButton.setTitle(text + "°C", for: .normal)
+        temperatureButton.setTitle(text + "°C", for: .highlighted)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Initializations
         monitorControlButtons()
         motionManager.startDeviceMotionUpdates()
+        // recieve video
         self.liveVideo.frame = self.view.bounds
         self.liveVideo.scalesPageToFit = true
-        let request = URLRequest(url: URL(string: "http://172.24.1.1:8080/?action=stream")!)
+        let request = URLRequest(url: URL(string: carService.videoURL)!)
         liveVideo.loadRequest(request)
+        // Sync temperature
+        DispatchQueue.global(qos: .background).async {
+            while(true) {
+                sleep(1)
+                TemperatureService.tempService.getTemperature(completion: { (result) in
+                    self.setTemperature(text: result)
+                })
+            }
+        }
     }
 }

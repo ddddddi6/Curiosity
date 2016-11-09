@@ -8,16 +8,27 @@
 
 import UIKit
 import Alamofire
+import Starscream
 
-
+// Service for raspberry pi mounted on the car
 class GoPiGoService: NSObject {
     
     // Car server
-    let url = "http://172.24.1.1:8000/"
+    let ip = "49.127.109.179"
+    // Video server
+    let videoURL: String
+    // Car control url
+    let url: String
+    // Track current http car control request
     var request: DataRequest?
     
-    // Video server
-    let videoURL = "http://172.24.1.1:98/"
+    override init() {
+        url = "http://" + ip + ":8000/"
+        videoURL = "http://" + ip + ":8080/?action=stream"
+        let socket = WebSocket(url: NSURL(string: "ws://" + ip + ":98/robot_control/041/t9162mkt/websocket")! as URL)
+        socket.connect()
+        super.init()
+    }
     
     // Stop car
     func stop() {
@@ -26,6 +37,7 @@ class GoPiGoService: NSObject {
         })
     }
     
+    // Continuouse moving command
     func moveContinuous(action: String, leftSpeed: Int, rightSpeed: Int) {
         if (request == nil) {
             let prameters = ["action": action, "leftSpeed": leftSpeed, "rightSpeed": rightSpeed] as [String : Any]
@@ -35,28 +47,13 @@ class GoPiGoService: NSObject {
         }
     }
     
+    // Move car with certain steps
     func moveWithSteps(action: String, steps: Int) {
         if (request == nil) {
             let prameters = ["action": action, "steps": steps] as [String : Any]
             request = Alamofire.request(url + "moveWithSteps", parameters: prameters).response(completionHandler: { (_) in
                 self.request = nil
             })
-        }
-    }
-    
-    func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
-        URLSession.shared.dataTask(with: url) {
-            (data, response, error) in
-            completion(data, response, error)
-            }.resume()
-    }
-    
-    func keepRunning() {
-        DispatchQueue.global(qos: .userInitiated).async {
-            while (true) {
-                _ = Alamofire.request(self.videoURL).response(completionHandler: { (_) in })
-                sleep(10)
-            }
         }
     }
 }
