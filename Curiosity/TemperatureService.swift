@@ -22,7 +22,7 @@ class TemperatureService: NSObject {
     var maxTemp: Int?
     
     // Temperature server
-    let url = "http://118.138.161.114:3000/"
+    let url = "http://130.194.76.176:3000/"
     var request: DataRequest?
     
     // Get temperature

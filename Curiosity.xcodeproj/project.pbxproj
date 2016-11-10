@@ -80,17 +80,17 @@
 		4F9743DB1DBD9795001B6525 /* Curiosity */ = {
 			isa = PBXGroup;
 			children = (
-				04EE64951DCC60D600790692 /* Curiosity.entitlements */,
 				4F9743F21DBDB632001B6525 /* Service */,
 				4F9743F11DBDB629001B6525 /* Controller */,
 				4F9743DC1DBD9795001B6525 /* AppDelegate.swift */,
+				04EE64951DCC60D600790692 /* Curiosity.entitlements */,
+				4F9743E81DBD9795001B6525 /* LaunchScreen.storyboard */,
 				4F9743E01DBD9795001B6525 /* Main.storyboard */,
+				4FAE2F5B1DCC0DE200EBCED0 /* Settings.storyboard */,
 				04CEB42E1DCC1B1C0035B1A5 /* GoogleService-Info.plist */,
 				4F9743E61DBD9795001B6525 /* Assets.xcassets */,
-				4F9743E81DBD9795001B6525 /* LaunchScreen.storyboard */,
 				4F9743EB1DBD9795001B6525 /* Info.plist */,
 				4F9743E31DBD9795001B6525 /* Curiosity.xcdatamodeld */,
-				4FAE2F5B1DCC0DE200EBCED0 /* Settings.storyboard */,
 			);
 			path = Curiosity;
 			sourceTree = "<group>";
