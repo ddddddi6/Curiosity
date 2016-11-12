@@ -7,7 +7,9 @@
 //
 
 import UIKit
+// Used to handle http control, can save words
 import Alamofire
+// Starscream is used to open websocket using ws:// protocal
 import Starscream
 
 // Service for raspberry pi mounted on the car
