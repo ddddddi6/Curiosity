@@ -11,7 +11,7 @@ import Firebase
 import FirebaseInstanceID
 import FirebaseMessaging
 
-// Temperature controller
+// Temperature setting controller
 class SettingsController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet var maxField: UITextField!

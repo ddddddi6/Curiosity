@@ -57,7 +57,7 @@ class TemperatureService: NSObject {
     // save defined temperature range data to NSUserdefalts
     func saveData(minTempSetting: Int, maxTempSetting: Int) {
         if (myDefaults.object(forKey: "saves") == nil) {
-            // the savedMovie `NSUserDefaults` does not exist
+            // the saved temp range `NSUserDefaults` does not exist
             let array = ["min": minTempSetting, "max": maxTempSetting]
             
             // then update whats in the `NSUserDefault`
